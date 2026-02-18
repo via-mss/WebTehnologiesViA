@@ -58,6 +58,7 @@ jobs:
 
           echo "Unexpected response from Pages API: HTTP $status_code"; exit 1
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAGES_ADMIN_TOKEN: ${{ secrets.PAGES_ADMIN_TOKEN }}
 
       - name: Upload site artifact
