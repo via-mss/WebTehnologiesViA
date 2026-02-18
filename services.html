@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtSpace – Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">ArtSpace</div>
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <ul id="primary-navigation" class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="services.html" aria-current="page">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="services">
+    <h1>Our Creative Works</h1>
+
+    <div class="service-item">
+        <img src="images/service1.png" alt="Digital Art">
+        <div>
+            <h2>Digital Art</h2>
+            <p>High‑quality illustrations and concept art.</p>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <img src="images/service2.png" alt="Photography">
+        <div>
+            <h2>Photography</h2>
+            <p>Creative and expressive photography collections.</p>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <img src="images/service3.png" alt="3D Modeling">
+        <div>
+            <h2>3D Modeling</h2>
+            <p>Detailed 3D renders and animations.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 ArtSpace. All rights reserved.</p>
+</footer>
+
+<script src="js/menu.js" defer></script>
+</body>
+</html>
