@@ -15,10 +15,10 @@ Publish to GitHub (one-time):
     git remote add origin git@github.com:via-mss/artspace.git
     git push -u origin main
 
-The included GitHub Actions workflow will deploy the `1.1` folder to GitHub Pages automatically on push to `main`.
+The included GitHub Actions workflow will deploy the repository root to GitHub Pages automatically on push to `main`.
 
 Published URL (project site):
 
-    https://via-mss.github.io/artspace/
+    https://via-mss.github.io/WebTehnologiesViA/
 
 If you want this as a user site instead, create a repo named `via-mss.github.io` and push the site to the repository root.
