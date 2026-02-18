@@ -15,7 +15,7 @@ Publish to GitHub (one-time):
     git remote add origin git@github.com:via-mss/artspace.git
     git push -u origin main
 
-The included GitHub Actions workflow will deploy the repository root to GitHub Pages automatically on push to `main`.
+The included GitHub Actions workflow will deploy the repository root to GitHub Pages automatically on push to `main`!
 
 Published URL (project site):
 
