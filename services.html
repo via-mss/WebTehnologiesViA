@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtSpace – Gallery</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+<meta charset="UTF-8">
+<title>BirdScope - Gallery</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* We could add extra CSS stuff here if we need to */
+</style>
 <body>
 
-<header>
     <nav class="navbar">
-        <div class="logo">ArtSpace</div>
-        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <ul id="primary-navigation" class="nav-links">
+        <ul>
+            <li id ="BirdScopeLogo">BirdScope</li>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a class="active" href="services.html" aria-current="page">Gallery</a></li>
+            <li><a href="services.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-</header>
 
-<section class="services">
-    <h1>Our Creative Works</h1>
-
-    <div class="service-item">
-        <img src="images/service1.png" alt="Digital Art">
-        <div>
-            <h2>Digital Art</h2>
-            <p>High‑quality illustrations and concept art.</p>
+    <main>
+        
+        <div id="FeaturedGallery">
+        <h1>Gallery</h1>
+        <p>Here are some of our favourite photos taken by our team.</p>
         </div>
-    </div>
 
-    <div class="service-item">
-        <img src="images/service2.png" alt="Photography">
-        <div>
-            <h2>Photography</h2>
-            <p>Creative and expressive photography collections.</p>
-        </div>
-    </div>
+        <section>
+            <div class="GalleryDisplay">
+                <a href="https://www.inaturalist.org/observations/258836203"><img src="Images/Gallery1_BlueTit.jpeg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/320666209"><img src="Images/Gallery2_GreatTit.jpg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/271677497"><img src="Images/Gallery3_MarshTit.jpeg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/271677498"><img src="Images/Gallery4_HouseSparrow.jpeg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/320847503"><img src="Images/Gallery5_TreeSparrow.jpg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/72150039"><img src="Images/Gallery6_Blackbird.jpg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/321788393"><img src="Images/Gallery7_BeardedReedling.jpg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/148738073"><img src="Images/Gallery8_SparrowHawk.jpg" class="GalleryItem"></a>
+                <a href="https://www.inaturalist.org/observations/97743099"><img src="Images/Gallery9_EurasianHobby.jpg" class="GalleryItem"></a>
+            </div>
+        </section>
 
-    <div class="service-item">
-        <img src="images/service3.png" alt="3D Modeling">
-        <div>
-            <h2>3D Modeling</h2>
-            <p>Detailed 3D renders and animations.</p>
-        </div>
-    </div>
-</section>
+        <section>
+            <div id="Copyright">
+                <p>© mara_and_davis_birzgalis</p>
+            </div>
+        </section>
 
-<footer>
-    <p>&copy; 2026 ArtSpace. All rights reserved.</p>
-</footer>
+    </main>
 
-<script src="js/menu.js" defer></script>
+    <footer class="Footer">
+        <p><a href="#" id="FooterLinks">Instagram</a> | <a href="secret.html" id="FooterLinks">Twitter</a> | <a href="#" id="FooterLinks">YouTube</a></p>
+        <p>© 2026 BirdScope. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

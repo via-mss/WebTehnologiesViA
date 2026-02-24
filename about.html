@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtSpace – About</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+<meta charset="UTF-8">
+<title>BirdScope - About</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* We could add extra CSS stuff here if we need to */
+</style>
 <body>
 
-<header>
-    <nav class="navbar">
-        <div class="logo">ArtSpace</div>
-        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <ul id="primary-navigation" class="nav-links">
+        <nav class="navbar">
+        <ul>
+            <li id ="BirdScopeLogo">BirdScope</li>
             <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="about.html" aria-current="page">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="services.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-</header>
 
-<section class="team">
-    <h1>Meet the Artists</h1>
-    <div class="team-grid">
-        <div class="member">
-            <img src="images/team1.png" alt="Artist 1">
-            <h3>Mārcis Soms‑Sakne</h3>
-            <p>Main Programmer</p>
-        </div>
-        <div class="member">
-            <img src="images/team2.png" alt="Artist 2">
-            <h3>Dāvis Birzgalis</h3>
-            <p>Photographer</p>
-        </div>
-        <div class="member">
-            <img src="images/team3.png" alt="Artist 3">
-            <h3>Simona Ansone</h3>
-            <p>Main Designer</p>
-        </div>
-    </div>
-</section>
+    <main>
 
-<section class="mission">
-    <h2>Our Mission</h2>
-    <p>ArtSpace aims to inspire creativity by providing a platform for artists to share their work and connect with others.</p>
-</section>
+        <section id="AboutFeatured">
+            <h2>Meet the Team</h2>
+        </section>
 
-<section class="history">
-    <h2>Our Journey</h2>
-    <ul>
-        <li><strong>2024:</strong> ArtSpace idea created.</li>
-        <li><strong>2025:</strong> First digital gallery launched.</li>
-        <li><strong>2026:</strong> Expanded into a full creative community.</li>
-    </ul>
-</section>
+        <section>
+            <div class="AboutRow">
+                <div class="AboutColumn">
+                    <img src="Images/PlaceholderPFP.jpg" class="RoundedImage">
+                    <h3>Mārcis Soms-Sakne</h3>
+                    <p>Consultant</p>
+                </div>
+                <div class="AboutColumn">
+                    <img src="Images/PlaceholderPFP2.jpg" class="RoundedImage">
+                    <h3>Dāvis Birzgalis</h3>
+                    <p>Researcher</p>
+                </div>
+                <div class="AboutColumn">
+                    <img src="Images/PlaceholderPFP3.jpg" class="RoundedImage">
+                    <h3>Simona Ansone</h3>
+                    <p>Web Developer</p>
+                </div>
+            </div>
+        </section>
 
-<footer>
-    <p>&copy; 2026 ArtSpace. All rights reserved.</p>
-</footer>
+        <section id="AboutMainText">
+            <h3>Our Mission:</h3>
+            <p>BirdScope is dedicated to promoting bird conservation and education through our 
+                innovative platform. <br> We aim to connect bird enthusiasts with local species and migration patterns.</p>
+            <br>
+            <h3>Our Timeline:</h3>
+            <ul>
+                <li>2021 - 2026: Dāvis started making bird observations, taking note of the diversity among them.</li>
+                <li>2023: A Scientific Research Paper was made regarding how avian diversity and weather is strongly connected.</li>
+                <li>2024: Critical acclaim of the Paper, leading to a greater focus on how bird diversity has changed.</li>
+                <li>2026: The idea of BirdScope was born and the team started working on it.</li>
+            </ul>
+        </section>
+        
+    </main> 
 
-<script src="js/menu.js" defer></script>
+    <footer class="Footer">
+        <p><a href="#" id="FooterLinks">Instagram</a> | <a href="secret.html" id="FooterLinks">Twitter</a> | <a href="#" id="FooterLinks">YouTube</a></p>
+        <p>© 2026 BirdScope. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

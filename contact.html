@@ -1,65 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtSpace – Contact</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+<meta charset="UTF-8">
+<title>BirdScope - Contact</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* We could add extra CSS stuff here if we need to */
+</style>
 <body>
 
-<header>
     <nav class="navbar">
-        <div class="logo">ArtSpace</div>
-        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <ul id="primary-navigation" class="nav-links">
+        <ul>
+            <li id ="BirdScopeLogo">BirdScope</li>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Gallery</a></li>
-            <li><a class="active" href="contact.html" aria-current="page">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-</header>
 
-<section class="contact">
-    <h1>Contact Us</h1>
-
-    <div class="contact-grid">
-        <form class="contact-form">
-            <label>Full Name</label>
-            <input type="text" required>
-
-            <label>E-mail</label>
-            <input type="email" required>
-
-            <label>Message</label>
-            <textarea rows="5" required></textarea>
-
-            <button type="submit" class="btn-primary">Submit</button>
-        </form>
-
-        <div class="contact-info">
-            <h2>Contact Details</h2>
-            <ul>
-                <li>Email: info@artspace.com</li>
-                <li>Phone: +371 123 456 78</li>
-                <li>Address: Rīgas iela 25, Valmiera</li>
-            </ul>
+    <main>
+        
+        <div id="ContactFeatured">
+            <h1>Get in Touch</h1>
+            <p>Have questions, suggestions or wish to collaborate?</p>
         </div>
-    </div>
-</section>
 
-<footer>
-    <p>&copy; 2026 ArtSpace. All rights reserved.</p>
-</footer>
+        <section id="ContactFormSection">
+            <div class="ContactRow">
+                <div class="ContactColumn">
+                <form id="ContactForm">
+                    <label for="name">Full Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">E-mail:</label><br>
+                    <input type="text" id="email" name="email" required><br><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+                    <input type="submit" value="Submit" id="ContactButton">
+                </form>
+                </div>
 
-<script src="js/menu.js" defer></script>
+                 <div id="ContactInfoColumn">
+                    <h3>Contact Details:</h3>
+                    <p><strong>Email: </strong>contact@birdscope.com</p>
+                    <p><strong>Phone: </strong>+123 456 7890</p>
+                    <p><strong>Address: </strong>Valdemāra iela 56, Ainaži</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="Footer">
+        <p><a href="#" id="FooterLinks">Instagram</a> | <a href="secret.html" id="FooterLinks">Twitter</a> | <a href="#" id="FooterLinks">YouTube</a></p>
+        <p>© 2026 BirdScope. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

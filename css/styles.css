@@ -1,155 +1,573 @@
-/* ==========================
-   ArtSpace — refreshed styles
-   - improved typography, spacing, color system
-   - responsive grid layouts and card UI
-   - accessible focus states
-   ========================== */
-:root{
-  --bg: #f6f8fb;
-  --card: #ffffff;
-  --text: #0f1724;
-  --muted: #6b7280;
-  --accent: #ff6f61;
-  --accent-600: #ff3b2f;
-  --shadow: 0 8px 30px rgba(2,6,23,0.08);
-  --radius: 12px;
-  --max-width: 1100px;
+/* This is like the styling for the root of the document, which is basically the entire page, I think? */
+:root {
+  background-color: rgba(236, 236, 236);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  background: linear-gradient(180deg, var(--bg), #eef2f7);
-  color:var(--text);
-  line-height:1.5;
-  margin:0;
+main {
+  min-height: 300px;
+  padding-bottom: 20px;
+  flex: 1 0 auto;
 }
 
-/* Utility container used across sections (no HTML changes needed) */
-.featured,
-.three-columns,
-.services,
-.team,
-.mission,
-.history,
-.contact,
-.contact-grid,
-footer{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding: clamp(1.25rem, 2.5vw, 2.5rem);
+body {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  font-family: Verdana, sans-serif;
+  color: rgba(73, 40, 40);
 }
 
-h1{font-size:clamp(1.6rem, 3.2vw, 2.6rem); margin-bottom:.5rem}
-h2{font-size:1.25rem; color:var(--text); margin-bottom:.5rem}
-h3{font-size:1rem; color:var(--text)}
-p{color:var(--muted)}
-
-a{color:var(--accent); text-decoration:none}
-a:focus{outline:3px solid rgba(255,111,97,0.15); outline-offset:3px}
-
-/* NAVIGATION */
-.navbar{
-  background:#0b1220; /* dark brand bar */
-  color:#fff;
-  padding:clamp(.5rem, 2vw, 1rem) clamp(.75rem, 4vw, 2rem);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:1rem;
-  box-shadow: 0 4px 18px rgba(2,6,23,0.08);
-}
-.logo{font-weight:700; letter-spacing:.6px}
-.nav-links{list-style:none; display:flex; gap:12px; align-items:center}
-.nav-links a{color:#e6eef8; padding:.45rem .75rem; border-radius:8px; font-weight:600; font-size:.95rem}
-.nav-links a:hover, .nav-links .active{background:rgba(255,255,255,0.04); box-shadow:inset 0 -2px 0 rgba(255,111,97,0.06)}
-.nav-links a:focus{box-shadow:0 0 0 3px rgba(255,111,97,0.12)}
-
-/* hamburger / mobile nav */
-.nav-toggle{display:none; background:transparent; border:0; color:#e6eef8; width:44px; height:44px; border-radius:10px; align-items:center; justify-content:center; cursor:pointer}
-.nav-toggle svg{display:block}
-@media (max-width:900px){
-  .nav-toggle{display:flex}
-  .nav-links{position:absolute; top:100%; right:1rem; background:rgba(11,18,32,0.98); backdrop-filter:blur(6px); border-radius:12px; padding:.75rem; flex-direction:column; gap:8px; display:none; min-width:200px; box-shadow:var(--shadow)}
-  .nav-links.open{display:flex}
-  .nav-links a{white-space:nowrap}
+.navbar ul{
+  list-style-type: none;
+  background-color: rgba(101, 109, 63);
+  padding: 10px;
+  margin: 0px;
+  display: flex;
+  justify-content: right;
 }
 
-/* HERO */
-.hero{
-  background: linear-gradient(180deg, rgba(6,10,28,0.45), rgba(6,10,28,0.45)), url("../images/hero.png") center/cover no-repeat;
-  color: #fff;
-  padding: clamp(3rem, 8vw, 7rem) 1rem;
-  text-align:center;
-}
-.hero h1{font-size:clamp(2rem, 5vw, 3.4rem); line-height:1.05; font-weight:800; text-shadow:0 8px 30px rgba(2,6,23,0.5)}
-.hero p{max-width:720px; margin:.75rem auto 1.25rem; color:rgba(255,255,255,0.92); font-size:1.05rem}
-
-.btn-primary{
-  display:inline-block;
-  background:var(--accent);
-  color:white;
-  padding:.6rem 1.05rem;
-  border-radius:999px;
-  font-weight:700;
-  border:0;
-  box-shadow: 0 8px 20px rgba(255,111,97,0.18);
-  cursor:pointer;
-  transition:transform .18s ease, box-shadow .18s ease, background-color .12s ease;
-}
-.btn-primary:hover{transform:translateY(-3px); background:var(--accent-600)}
-.btn-primary:focus{outline:3px solid rgba(255,111,97,0.18); outline-offset:4px}
-
-/* FEATURED */
-.featured{ text-align:center; padding-top:2.5rem }
-.featured h2{font-size:1.5rem}
-
-/* THREE COLUMN CARDS */
-.three-columns{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; padding-bottom:1.5rem }
-.column{ background:var(--card); padding:1.25rem; border-radius:var(--radius); box-shadow:var(--shadow); transition:transform .18s ease; text-align:left }
-.column:hover{transform:translateY(-6px)}
-.column h3{margin-bottom:.5rem}
-
-/* TEAM */
-.team-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:1rem; align-items:start }
-.member{ background:var(--card); padding:1rem; border-radius:14px; box-shadow:0 6px 24px rgba(2,6,23,0.06)}
-.member img{ width:100%; max-width:180px; height:auto; border-radius:999px; display:block; margin:0 auto 0.75rem }
-.member h3{margin-top:0}
-
-/* SERVICES / GALLERY */
-.services h1{margin-bottom:1rem}
-.service-item{ display:grid; grid-template-columns: 160px 1fr; gap:1rem; align-items:center; background:var(--card); padding:1rem; border-radius:14px; box-shadow:var(--shadow); transition:transform .18s ease }
-.service-item img{ width:100%; height:100%; object-fit:cover; border-radius:10px }
-.service-item:hover{ transform:translateY(-6px) }
-
-/* CONTACT */
-.contact-grid{ display:grid; grid-template-columns: 1fr 320px; gap:1rem }
-.contact-form{ background:var(--card); padding:1.25rem; border-radius:14px; box-shadow:var(--shadow) }
-.contact-form label{ display:block; font-weight:600; margin-bottom:.25rem; color:var(--text) }
-.contact-form input, .contact-form textarea{ border:1px solid #e6e9ef; padding:.6rem .75rem; border-radius:8px; font-size:0.95rem; background:transparent }
-.contact-form input:focus, .contact-form textarea:focus{ box-shadow: 0 6px 20px rgba(2,6,23,0.05); border-color:rgba(255,111,97,0.35); outline:none }
-.contact-info{ background:transparent; color:var(--muted); padding:.5rem }
-
-/* FOOTER */
-footer{ background:transparent; color:var(--muted); padding:2.5rem 1rem; text-align:center }
-footer p{ margin:.25rem 0 }
-
-/* Small screens */
-@media (max-width:900px){
-  .service-item{ grid-template-columns: 1fr }
-  .contact-grid{ grid-template-columns: 1fr }
-  .navbar{ padding: .6rem 1rem }
+.navbar a{
+  color: rgba(236, 236, 236);
+  text-decoration: none;
+  padding: 15px 10px;
+  display: block;
 }
 
-@media (max-width:520px){
-  .nav-links{ display:flex; flex-wrap:wrap; gap:8px }
-  .hero{ padding: clamp(2.2rem, 8vw, 4.2rem) 1rem }
-  .member img{ max-width:140px }
-  .three-columns{ grid-template-columns: 1fr }
+.navbar a:hover{
+  background-color: rgba(132, 147, 74);
+  border-radius: 15px;
 }
 
-/* small accessibility helpers */
-.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0 }
+#BirdScopeLogo {
+  margin-right: auto;
+  color: rgba(236, 236, 236);
+  padding: 15px 10px;
+  font-weight: bold;
+  font-variant:small-caps;
+}
+
+.HeroImage {
+
+  margin: 0px;
+
+  background-image: linear-gradient(rgba(101, 109, 63), rgba(0, 0, 0, 0.5)), url("Images/HeroImage.png");
+
+  height: 400px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.HeroText {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(236, 236, 236);
+}
+
+#GalleryButton {
+  background-color: rgba(101, 109, 63);
+  border-radius: 15px;
+  border-style: outset;
+  border-color: rgba(132, 147, 74);
+  color: rgba(236, 236, 236);
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 3px 6px rgb(27, 27, 27);
+  transition: transform 0.2s ease-out;
+}
+
+#GalleryButton:hover{
+  background-color: rgba(132, 147, 74);
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+
+.Featured {
+  padding: 16px;
+  text-align: center;
+}
+
+#AboutFeatured {
+  text-align: center;
+  font-size: 30px;
+}
+
+#AboutMainText {
+  padding: 20px;
+  text-align: justify;
+  font-size: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+  list-style-type:disc;
+}
+
+.Row{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  column-gap: 25px;
+}
+
+.HomeColumn {
+  width: 240px;
+  height: 180px;
+  padding: 5px;
+  box-shadow: 5px 6px rgb(155, 155, 155);
+  background-image: linear-gradient(rgba(101, 109, 63), rgba(132, 147, 74));
+  border-radius: 15px;
+  color: rgba(236, 236, 236);
+  text-align: center;
+  transition: transform 1s ease-out;
+}
+
+.HomeColumn:hover {
+  background-image: linear-gradient(rgba(132, 147, 74), rgba(101, 109, 63));
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-out;
+}
+
+.AboutRow{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  column-gap: 60px;
+}
+
+.AboutColumn {
+  width: 260px;
+  height: 280px;
+  padding: 5px;
+  box-shadow: 5px 6px rgb(155, 155, 155);
+  background-image: linear-gradient(rgba(101, 109, 63), rgba(132, 147, 74));
+  border-radius: 15px;
+  color: rgba(236, 236, 236);
+  text-align: center;
+  transition: transform 1s ease-out;
+}
+
+.AboutColumn p {
+  margin-top: -10px;
+}
+
+section:last-of-type {
+  margin-bottom: 30px;
+}
+
+.Footer {
+  background-image: linear-gradient(rgba(132, 147, 74), rgba(101, 109, 63));
+  color: rgba(236, 236, 236);
+  text-align: center;
+  margin-top: auto;
+  position: relative;
+  width: 100%;
+  padding: 3px;
+  clear: both;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+#FooterLinks {
+  color: rgba(236, 236, 236);
+  text-decoration: none;
+  padding: 10px;
+}
+
+.RoundedImage {
+  width: 180px;
+  height: 180px;
+  display: block;
+  object-fit: cover;
+  padding: 12px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+}
+
+#FeaturedGallery {
+  text-align: center;
+}
+
+.GalleryDisplay {
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
+  box-sizing: border-box;
+  justify-content: center;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.GalleryItem {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  object-fit: cover;
+  justify-content: center;
+  filter: drop-shadow(2px 2px 2px rgb(111, 111, 111));
+  transition: transform all 0.2s ease-out;
+}
+
+.GalleryItem:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(4px 6px 4px rgb(111, 111, 111));
+  transition: transform all 0.2s ease-out;
+}
+
+#Copyright {
+  margin-bottom: 30px;
+  font-size: 10px;
+  text-align: center;
+  opacity: 50%;
+}
+
+.ContactRow{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  column-gap: 30px;
+}
+
+.ContactColumn {
+  width: 300px;
+  height: 320px;
+  padding: 20px;
+  box-shadow: 5px 6px rgb(155, 155, 155);
+  background-image: linear-gradient(rgba(101, 109, 63), rgba(132, 147, 74));
+  border-radius: 15px;
+  color: rgba(236, 236, 236);
+  text-align: center;
+}
+
+input[type=text], select, textarea {
+  width: 80%; 
+  padding: 6px;
+  border: 1px solid rgba(236, 236, 236);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  resize: vertical;
+}
+
+#ContactButton {
+  background-color: rgba(73, 40, 40);
+  border-radius: 15px;
+  border-style: outset;
+  border-color: rgba(132, 147, 74);
+  color: rgba(236, 236, 236);
+  padding: 8px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  filter: drop-shadow(2px 4px rgba(101, 109, 63));
+  transition: transform 0.2s ease-out;
+}
+
+#ContactButton:hover{
+  background-color: rgb(99, 55, 55);
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+
+#ContactInfoColumn {
+  width: 300px;
+  height: 160px;
+  padding: 15px;
+  box-shadow: 5px 6px rgb(155, 155, 155);
+  background-image: linear-gradient(rgba(132, 147, 74), rgba(101, 109, 63));
+  border-radius: 15px;
+  color: rgba(236, 236, 236);
+  text-align: center;
+}
+
+/* Everything after this line is for the responsive design. */
+
+/* 768px and below */
+@media screen and (max-width: 768px) {
+
+    .Row, .AboutRow, .ContactRow {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .HomeColumn {
+        width: 80%;
+        max-width: 400px;
+        height: auto;
+        min-height: 160px;
+        padding: 15px;
+    }
+    
+    .AboutColumn {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        min-height: 280px;
+        padding: 15px;
+    }
+    
+    .RoundedImage {
+        width: 200px;
+        height: 200px;
+        padding: 8px;
+        justify-content: center;
+    }
+    
+    #AboutMainText {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    
+    .GalleryDisplay {
+        grid-template-rows: 180px, 180px, 180px;
+        grid-template-columns: 180px, 180px, 180px;
+        gap: 8px;
+        padding: 10px;
+        max-width: 100vw;
+    }
+    
+    .GalleryItem {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .ContactColumn {
+        width: 80%;
+        max-width: 350px;
+        height: auto;
+        min-height: 300px;
+        padding: 20px;
+    }
+    
+    #ContactInfoColumn {
+        width: 80%;
+        max-width: 350px;
+        height: auto;
+        min-height: 140px;
+    }
+    
+    input[type=text], select, textarea {
+        width: 90%;
+    }
+    
+    .HeroImage {
+        height: 350px;
+    }
+    
+    .HeroText h1 {
+        font-size: 32px;
+    }
+    
+    .HeroText p {
+        font-size: 15px;
+        padding: 0 20px;
+    }
+    
+    #AboutFeatured h2 {
+        font-size: 28px;
+    }
+}
+
+/* 480px and below. */
+@media screen and (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        width: 100vw;
+    }
+    
+    #BirdScopeLogo {
+        margin-right: 0;
+        margin-bottom: 5px;
+        padding: 10px;
+        font-size: 18px;
+    }
+    
+    .navbar a {
+        padding: 10px 20px;
+        text-align: center;
+        width: 100vw;
+        font-size: 16px;
+    }
+    
+    .HeroImage {
+        height: 280px;
+    }
+    
+    .HeroText h1 {
+        font-size: 26px;
+    }
+    
+    .HeroText p {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    
+    #GalleryButton {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .HomeColumn {
+        width: 90%;
+        padding: 12px;
+    }
+    
+    .HomeColumn h3 {
+        font-size: 16px;
+    }
+    
+    .HomeColumn p {
+        font-size: 14px;
+    }
+    
+    .AboutColumn {
+        width: 90%;
+        padding: 12px;
+    }
+    
+    .AboutColumn h3 {
+        font-size: 16px;
+    }
+    
+    .RoundedImage {
+        width: 200px;
+        height: 200px;
+        padding: 5px;
+    }
+    
+    #AboutMainText {
+        padding: 10px 20px;
+        font-size: 14px;
+        text-align: left;
+    }
+    
+    #AboutMainText h3 {
+        font-size: 18px;
+    }
+    
+    #AboutMainText li {
+        font-size: 14px;
+    }
+    
+    .GalleryDisplay {
+        grid-template-rows: 140px 140px 140px;
+        grid-template-columns: 25% 25% 25%;
+        gap: 5px;
+        padding: 5px;
+    }
+    
+    .GalleryItem {
+        width: 140px;
+        height: 140px;    
+    }
+    
+    #FeaturedGallery h1 {
+        font-size: 28px;
+    }
+    
+    #FeaturedGallery p {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    
+    #ContactFeatured h1 {
+        font-size: 28px;
+    }
+    
+    #ContactFeatured p {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    
+    .ContactColumn {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .ContactColumn h3 {
+        font-size: 18px;
+    }
+    
+    #ContactInfoColumn {
+        width: 90%;
+        padding: 12px;
+    }
+    
+    #ContactInfoColumn p {
+        font-size: 14px;
+    }
+    
+    input[type=text], select, textarea {
+        width: 95%;
+        padding: 5px;
+        font-size: 14px;
+    }
+    
+    #ContactButton {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    
+    .Footer {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    #FooterLinks {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
+    
+    #Copyright {
+        margin-bottom: 20px;
+        font-size: 8px;
+    }
+}
+
+/* Added a smooth transition between the responsive changes, because uh... fancy lol */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adding this helped with problems with the list. */
+
+#AboutMainText li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+
+/* Ensure images don't overflow. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .navbar a, #GalleryButton,
+    #ContactButton, .GalleryItem,
+    #FooterLinks {
+        padding: 12px 15px;
+    }
+    /* Makes the button bigger on smaller displays */
+    
+    .GalleryItem {
+        transform: none; /* Disabled hover effects on touch devices */
+    }
+}
