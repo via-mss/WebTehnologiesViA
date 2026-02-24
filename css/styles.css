@@ -52,7 +52,7 @@ body {
 
   margin: 0px;
 
-  background-image: linear-gradient(rgba(101, 109, 63), rgba(0, 0, 0, 0.5)), url("Images/HeroImage.png");
+  background-image: linear-gradient(rgba(101, 109, 63), rgba(0, 0, 0, 0.5)), url("../Images/HeroImage.png");
 
   height: 400px;
 
